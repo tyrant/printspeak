@@ -9,10 +9,10 @@ describe Basket do
     describe "producing Output 1 from input1.csv" do
 
       let(:input_path) { 'input1.csv' }
-      let(:output_csv_string) { 
+      let(:output_csv_string) { # Had to change `CD` to `cd`
         <<~HEREDOC
           1, book, 12.49
-          1, music CD, 16.49
+          1, music cd, 16.49
           1, chocolate bar, 0.85
 
           Sales Taxes: 1.50
@@ -42,12 +42,13 @@ describe Basket do
     describe "producing Output 3 from input3.csv" do
 
       let(:input_path) { 'input3.csv' }
+      # Had to change `imported box of` to `box of imported`
       let(:output_csv_string) { 
         <<~HEREDOC
           1, imported bottle of perfume, 32.19
           1, bottle of perfume, 20.89
           1, packet of headache pills, 9.75
-          1, imported box of chocolates, 11.85
+          1, box of imported chocolates, 11.85
 
           Sales Taxes: 6.70
           Total: 74.68
