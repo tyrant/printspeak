@@ -13,10 +13,14 @@ class Item
   end
 
   def output_line
-    "#{@quantity}, #{@product.name}, #{line_cost}"
+    "#{@quantity}, #{@product.name}, #{sprintf "%.2f", line_price}"
   end
 
-  def line_cost
+  def line_price
     (@product.price_including_tax * @quantity).round(2)
+  end
+
+  def line_sales_tax
+    (@product.rounded_sales_tax * @quantity).round(2)
   end
 end
