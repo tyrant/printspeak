@@ -29,7 +29,7 @@ class Product
   end
 
   def import_duty_exempt?
-    !name.include?('imported')
+    !@name.include?('imported')
   end
 
   def basic_sales_tax_exempt?
@@ -37,15 +37,15 @@ class Product
   end
 
   def book?
-    name.include? 'book'
+    @name.include? 'book'
   end
 
   def food?
-    name.include? 'chocolate'
+    @name.include? 'chocolate'
   end
 
   def medical?
-    name.include? 'pills'
+    @name.include? 'pills'
   end
 
   # Bit of arithmetic: to get a 5c-rounded-up value, simply multiply the
