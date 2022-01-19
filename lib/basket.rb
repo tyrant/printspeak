@@ -11,7 +11,7 @@ class Basket
       raise "The CSV input file's headers must be: Quantity, Product, Price. Not: '#{csv_headers.join(', ')}' The hell's that?"
     end
 
-    _load_items_from(input_path: input_path)
+    load_items_from(input_path: input_path)
   end
 
 
@@ -20,10 +20,7 @@ class Basket
 
   end
 
-
-  private
-
-  def _load_items_from(input_path:)
+  def load_items_from(input_path:)
     @items = []
 
     CSV.foreach input_path, headers: true do |row|
