@@ -30,11 +30,9 @@ class Basket
     CSV.foreach input_path, headers: true do |row|
       @items << Item.new(
           quantity: row['Quantity'], 
-          name:     row['Name'],
+          name:     row['Product'],
           price:    row['Price']
         )
     end
   end
-
-
 end
